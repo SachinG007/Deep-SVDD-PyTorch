@@ -32,13 +32,13 @@ class CIFAR10_Dataset(TorchvisionDataset):
         rots =  [transforms.RandomRotation(degrees=(0,0)),transforms.RandomRotation(degrees=(90,90)),
                     transforms.RandomRotation(degrees=(180,180)),transforms.RandomRotation(degrees=(270,270))]
 
-        transform = transforms.Compose([transforms.ToTensor(),
+        transform = transforms.Compose([transforms.RandomHorizontalFlip(p=0.5),
+                                        transforms.RandomAffine(degrees=0, translate=(0.25,0.25)),
+                                        transforms.RandomChoice(rots),
+                                        transforms.ToTensor(),
                                         transforms.Lambda(lambda x: global_contrast_normalization(x, scale='l1')),
                                         transforms.Normalize([min_max[normal_class][0]] * 3,
                                                              [min_max[normal_class][1] - min_max[normal_class][0]] * 3),
-                                        transforms.RandomHorizontalFlip(p=0.5),
-                                        transforms.RandomAffine(degrees=0, translate=(0.25,0.25)),
-                                        transforms.RandomChoice(rots),
                                         ])
 
         target_transform = transforms.Lambda(lambda x: int(x in self.outlier_classes))
