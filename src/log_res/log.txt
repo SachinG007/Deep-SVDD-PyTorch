@@ -1,0 +1,30 @@
+2020-02-02 07:07:36,701 - root - INFO - Log file is log_res/log.txt.
+2020-02-02 07:07:36,701 - root - INFO - Data path is ../data.
+2020-02-02 07:07:36,701 - root - INFO - Export path is log_res.
+2020-02-02 07:07:36,701 - root - INFO - Dataset: cifar10
+2020-02-02 07:07:36,701 - root - INFO - Normal class: 3
+2020-02-02 07:07:36,701 - root - INFO - Network: cifar10_LeNet
+2020-02-02 07:07:36,702 - root - INFO - Deep SVDD objective: one-class
+2020-02-02 07:07:36,702 - root - INFO - Nu-paramerter: 0.10
+2020-02-02 07:07:36,745 - root - INFO - Computation device: cuda
+2020-02-02 07:07:36,745 - root - INFO - Number of dataloader workers: 0
+2020-02-02 07:08:43,870 - root - INFO - Log file is log_res/log.txt.
+2020-02-02 07:08:43,870 - root - INFO - Data path is ../data.
+2020-02-02 07:08:43,870 - root - INFO - Export path is log_res.
+2020-02-02 07:08:43,870 - root - INFO - Dataset: cifar10
+2020-02-02 07:08:43,870 - root - INFO - Normal class: 3
+2020-02-02 07:08:43,870 - root - INFO - Network: cifar10_LeNet
+2020-02-02 07:08:43,871 - root - INFO - Deep SVDD objective: one-class
+2020-02-02 07:08:43,871 - root - INFO - Nu-paramerter: 0.10
+2020-02-02 07:08:43,915 - root - INFO - Computation device: cuda
+2020-02-02 07:08:43,915 - root - INFO - Number of dataloader workers: 0
+2020-02-02 07:09:07,855 - root - INFO - Log file is log_res/log.txt.
+2020-02-02 07:09:07,856 - root - INFO - Data path is ../data.
+2020-02-02 07:09:07,856 - root - INFO - Export path is log_res.
+2020-02-02 07:09:07,856 - root - INFO - Dataset: cifar10
+2020-02-02 07:09:07,856 - root - INFO - Normal class: 3
+2020-02-02 07:09:07,856 - root - INFO - Network: cifar10_LeNet
+2020-02-02 07:09:07,856 - root - INFO - Deep SVDD objective: one-class
+2020-02-02 07:09:07,856 - root - INFO - Nu-paramerter: 0.10
+2020-02-02 07:09:07,904 - root - INFO - Computation device: cuda
+2020-02-02 07:09:07,905 - root - INFO - Number of dataloader workers: 0

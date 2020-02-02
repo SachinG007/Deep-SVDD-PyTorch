@@ -6,7 +6,6 @@ from .preprocessing import get_target_label_idx, global_contrast_normalization
 
 import torchvision.transforms as transforms
 
-
 class CIFAR10_Dataset(TorchvisionDataset):
 
     def __init__(self, root: str, normal_class=5):
@@ -30,10 +29,17 @@ class CIFAR10_Dataset(TorchvisionDataset):
                    (-6.132882973622672, 8.046098172351265)]
 
         # CIFAR-10 preprocessing: GCN (with L1 norm) and min-max feature scaling to [0,1]
+        rots =  [transforms.RandomRotation(degrees=(0,0)),transforms.RandomRotation(degrees=(90,90)),
+                    transforms.RandomRotation(degrees=(180,180)),transforms.RandomRotation(degrees=(270,270))]
+
         transform = transforms.Compose([transforms.ToTensor(),
                                         transforms.Lambda(lambda x: global_contrast_normalization(x, scale='l1')),
                                         transforms.Normalize([min_max[normal_class][0]] * 3,
-                                                             [min_max[normal_class][1] - min_max[normal_class][0]] * 3)])
+                                                             [min_max[normal_class][1] - min_max[normal_class][0]] * 3),
+                                        transforms.RandomHorizontalFlip(p=0.5),
+                                        transforms.RandomAffine(degrees=0, translate=(0.25,0.25)),
+                                        transforms.RandomChoice(rots),
+                                        ])
 
         target_transform = transforms.Lambda(lambda x: int(x in self.outlier_classes))
 
